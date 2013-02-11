@@ -9,7 +9,7 @@ class testApp : public ofBaseApp{
 		void update();
 		void draw();
     
-    ofVideoPlayer my_video;
+        ofVideoPlayer my_video;
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
