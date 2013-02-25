@@ -1,0 +1,22 @@
+<keyframes>
+    <key>
+        <flag />
+        <time>00:00:00:257</time>
+        <value>0.000000000</value>
+    </key>
+    <key>
+        <flag>fdfd</flag>
+        <time>00:00:00:364</time>
+        <value>0.324999988</value>
+    </key>
+    <key>
+        <flag>fdfdf</flag>
+        <time>00:00:01:494</time>
+        <value>0.149999976</value>
+    </key>
+    <key>
+        <flag>fsdfdfd</flag>
+        <time>00:00:02:112</time>
+        <value>0.750000000</value>
+    </key>
+</keyframes>
