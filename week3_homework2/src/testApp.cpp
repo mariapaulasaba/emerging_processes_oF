@@ -2,8 +2,8 @@
 
 //--------------------------------------------------------------
 void testApp::setup(){
-    player.loadMovie("seasons.mp4");
-    
+    player.loadMovie("seasons2.mp4");
+  
     player.play();
     
     counter = 0;
@@ -31,6 +31,7 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     float step = 5;
+    float range = ofMap(mouseX, 0, ofGetWidth(), 10, 100);
 
     ofPushStyle();
     ofEnableBlendMode(OF_BLENDMODE_SCREEN);
@@ -43,7 +44,7 @@ void testApp::draw(){
             pixelPosition.x = ofMap(x, 0, player.getWidth(), -100, ofGetWidth()+100);
             pixelPosition.y = ofMap(y, 0, player.getHeight(), -100, ofGetHeight()+100);
             
-            float diameter = step+  ofDist(mover.location.x,mover.location.y, pixelPosition.x, pixelPosition.y) / 100;
+            float diameter = step+  ofDist(mover.location.x,mover.location.y, pixelPosition.x, pixelPosition.y) / range;
 
             
              ofColor c = player.getPixelsRef().getColor(x, y);

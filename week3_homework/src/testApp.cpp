@@ -29,9 +29,12 @@ void testApp::update(){
 void testApp::draw(){
     float step = 10;
 
+    float rangeX = ofMap(mouseX, 0, ofGetWidth(), 1, 1000);
+    float rangeY = ofMap(mouseY, 0, ofGetHeight(), 10, 600);
+    //float range = 10;
+    
     
     ofPushStyle();
-  //  ofEnableBlendMode(OF_BLENDMODE_SCREEN);
     
     for(float y = 0; y < grabber.getHeight(); y+=step){
         for(float x = 0; x < grabber.getWidth(); x+=step){
@@ -40,15 +43,15 @@ void testApp::draw(){
             pixelPosition.x = ofMap(x, 0, grabber.getWidth(), -100, ofGetWidth()+100);
             pixelPosition.y = ofMap(y, 0, grabber.getHeight(), -100, ofGetHeight()+100);
             
-            float diameter = step + ofDist(mover.location.x,mover.location.y, pixelPosition.x, pixelPosition.y) / 10;
-
+            float diameter =  ofDist(mover.location.x,mover.location.y, pixelPosition.x, pixelPosition.y) / rangeY;
+            //float diameter = ofDist(mouseX, mouseY, pixelPosition.x, pixelPosition.y)/range;
             
              ofColor c = grabber.getPixelsRef().getColor(x, y);
             
             ofSetColor(c.r, c.g, c.b);
             ofFill();
 
-            ofCircle(pixelPosition, diameter);
+            ofCircle(pixelPosition.x + ofRandom(rangeX), pixelPosition.y + ofRandom(rangeX), diameter);
 
             
         }
